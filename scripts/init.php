@@ -23,11 +23,13 @@ echo 'Composer Manager has been successfuly initialized.' . PHP_EOL;
  */
 function find_root() {
   $currentPath = getcwd() . '/';
+  echo $currentPath;
   $relativePath = '';
   $rootPath = '';
   $found = FALSE;
   while (!$found) {
     $rootPath = $currentPath . $relativePath;
+    echo $rootPath;
     if (is_dir($rootPath . 'vendor')) {
       $found = TRUE;
       break;
@@ -39,6 +41,6 @@ function find_root() {
       }
     }
   }
-
+echo $found ? realpath($rootPath) : NULL;die("ARIT");
   return $found ? realpath($rootPath) : NULL;
 }
