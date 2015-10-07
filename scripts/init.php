@@ -28,7 +28,7 @@ function find_root() {
   $found = FALSE;
   while (!$found) {
     $rootPath = $currentPath . $relativePath;
-    echo $rootPath;
+    echo $rootPath.';';
     if (is_dir($rootPath . 'vendor')) {
       $found = TRUE;
       break;
@@ -40,5 +40,6 @@ function find_root() {
       }
     }
   }
+  var_dump($found,realpath($rootPath));
   return $found ? realpath($rootPath) : NULL;
 }
