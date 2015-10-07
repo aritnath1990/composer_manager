@@ -22,7 +22,7 @@ echo 'Composer Manager has been successfuly initialized.' . PHP_EOL;
  * Returns the absolute path to Drupal's root directory.
  */
 function find_root() {
-  $currentPath = getcwd() . '/';
+  $currentPath = __DIR__ . '/';
   $relativePath = '';
   $rootPath = '';
   $found = FALSE;
